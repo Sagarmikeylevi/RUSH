@@ -7,6 +7,8 @@ router.get('/sign-in' , UserController.signIn);
 router.get('/sign-up' , UserController.signUp);
 
 router.post('/create' , UserController.create);
+router.post('/create-session' , UserController.createSession);
+router.post('/delete-session' , UserController.deleteSession);
 
 
 module.exports = router;
