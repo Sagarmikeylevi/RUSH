@@ -7,6 +7,7 @@ module.exports.home = async function(req , res){
     try {
         // populate the whole user object
         let posts = await Post.find({})
+        .sort('-createdAt')
         .populate('user')
         .populate({
            path: 'comments',
@@ -16,6 +17,7 @@ module.exports.home = async function(req , res){
         });
 
         let users = await User.find({}); 
+        
         return res.render('home' , {
             title: "RUSH | Home",
             posts: posts,
